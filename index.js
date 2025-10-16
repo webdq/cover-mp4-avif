@@ -29,14 +29,14 @@ const config = {
     encoderOptions: [
       // FFmpeg 编码参数
       "-c:v libwebp", // 使用WebP编码器
-      "-q:v 80", // 质量参数（0-100，值越大质量越好）
+      "-q:v 90", // 质量参数（0-100，值越大质量越好）
       "-lossless 0", // 禁用无损模式
       "-loop 0", // 无限循环（适用于动态WebP）
       "-threads 4", // 设置每个转换任务的线程数
-      // "-preset picture", // 使用预设优化压缩，picture 适用于照片
-      // "-compression_level 6", // 压缩级别（0-9，值越大压缩越好但速度越慢）
+      "-preset picture", // 使用预设优化压缩，picture 适用于照片
+      "-compression_level 6", // 压缩级别（0-9，值越大压缩越好但速度越慢）
       "-an", // 去除音频流，减少文件大小
-      "-vf scale=-1:240", // 调整分辨率，高度为 360，宽度按比例缩放
+      "-vf scale=-1:360", // 调整分辨率，高度为 360，宽度按比例缩放
     ],
   },
 };
